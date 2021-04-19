@@ -17,10 +17,9 @@
 
 #### MAKE FUNCTIONS:
  - build: The default make function. Compiles source code and makes it executable.
-
+ - clean: Removes the compiled version of CJSH from the source directory
 
 #### UPCOMING MAKE FUNCTIONS:
- - clean: Removes the compiled version of CJSH from the source directory
  - install: Installs CJSH into /bin
  - uninstall: Removes CJSH from /bin
  - update: Pulls latest source code from repo. Does not compile source code.
