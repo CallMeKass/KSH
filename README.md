@@ -12,7 +12,7 @@
 1. Clone the repository
 2. Navigate into cloned repository using bash
 3. Run the following command in bash: 'make'
-4. Run the command ./CJSH
+4. Run the command ./CJSH.out
 5. CJSH will take over as the active shell!
 
 #### MAKE FUNCTIONS:
