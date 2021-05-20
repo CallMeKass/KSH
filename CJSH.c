@@ -1,9 +1,3 @@
-/***********************************************************
- * Name of program: project1
- * Author: Tyler Holm
- * Description: custom shell for Linux
- **********************************************************/
-
 //Included libraries
 #include <stdio.h>
 #include <stdlib.h>
@@ -13,18 +7,17 @@
 #include <unistd.h>
 #include <sys/wait.h>
 
-
 //Declarations for functions that get called later
-void promptUser(void); //Prompts user for input
-int runCommand(char * array[10]); //Runs validated tokens as command
-void changeDir(char * path); //Changes the working directory
+void promptUser(void);                                          //Prompts user for input
+int runCommand(char * array[10]);                               //Runs validated tokens as command
+void changeDir(char * path);                                    //Changes the working directory
 
 /* main()
  * Loops for new user input until user enters 'exit'
  * Runs valid commands
  */
 int main(int argc, char *argv[]) {
-	//initialize variables
+    //initialize variables
     char userInput[80];
     char lcInput[80];
     int pidArray[5];
@@ -32,9 +25,9 @@ int main(int argc, char *argv[]) {
     char * tokenArray[10];
     
 	while (1) {
-        //Get input from user - Part 1 //
+        // Get input from user - Part 1 //
         promptUser(); // Print prompt
-        fgets(userInput, sizeof(userInput), stdin); //get input
+        fgets(userInput, sizeof(userInput), stdin);             //get input
         strtok(userInput, "\n");
         
         // "exit" built-in - Part 4 //
@@ -60,7 +53,7 @@ int main(int argc, char *argv[]) {
             tokenArray[i] = tokens;
             tokens = strtok(NULL, " ");
         }
-        tokenArray[i] = NULL; //Make last element NULL
+        tokenArray[i] = NULL;                                   // Make last element NULL
         
         
         // "cd" built-in - Part 4 //
@@ -70,7 +63,7 @@ int main(int argc, char *argv[]) {
         
         
         // "showpid" built-in - Part 4 //
-        else if (strncmp(tokenArray[0], "showpid", 7) == 0) { //showpid.. ya
+        else if (strncmp(tokenArray[0], "showpid", 7) == 0) {   // showpid
             for (i=0; i<=4 && pidArray[i]!=0; i++) {
                 printf("%d\n", pidArray[i]);
             }
@@ -79,11 +72,11 @@ int main(int argc, char *argv[]) {
         // Fork and execute Command - Part 3 //
         else {
             int executeFlag = runCommand(tokenArray);
-            if (executeFlag == -1) { //kill extra shell and print error if execution fails
+            if (executeFlag == -1) {                            //kill extra shell and print error if execution fails
                 printf("Error: Command could not be executed\n");
-                break; //Kill extra shell
+                break;                                          //Kill extra shell
             }
-            else { // else add to showpid array
+            else {                                              // else add to showpid array
                 for (i=3; i>=0; --i) {
                     pidArray[i+1] = pidArray[i];
                 }
