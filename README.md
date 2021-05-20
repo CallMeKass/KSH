@@ -1,4 +1,7 @@
 
+## 🛑 WARNING! 🛑
+This branch of the repository is no longer being worked on. The project will being re-written and updated using C# going forward. Please migrate to the latest branch.
+
 # CJSH
 #### Custom Linux shell
 
