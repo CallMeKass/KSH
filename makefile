@@ -1,10 +1,10 @@
 build:
 	@echo "Started compiling source code"
-	gcc CJSH.c -o CJSH.out
-	chmod +x CJSH.out
+	gcc KSH.c -o KSH.out
+	chmod +x KSH.out
 	@echo "Source code has been compiled"
 
 clean:
-	@echo "Removing CJSH.out"
-	rm CJSH.out
-	@echo "Finished removing CJSH.out"
+	@echo "Removing KSH.out"
+	rm KSH.out
+	@echo "Finished removing KSH.out"
