@@ -18,7 +18,3 @@
  - build: The default make function. Compiles source code and makes it executable.
  - clean: Removes the compiled version of KSH from the source directory
 
-#### UPCOMING MAKE FUNCTIONS:
- - install: Installs KSH into /bin
- - uninstall: Removes KSH from /bin
- - update: Pulls latest source code from repo. Does not compile source code.
